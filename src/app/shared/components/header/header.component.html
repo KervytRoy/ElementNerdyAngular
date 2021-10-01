@@ -1,0 +1,73 @@
+<div class="headers row">
+  <div class="col-12 items">
+    <div class=" navbar-expand-lg nav-header header-img">
+      <img src="../../../../assets/2.png" alt="">
+    </div>
+  </div>
+  <div class="col-12 items">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center px-6">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+    
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item mx-2 cursorPointer">
+            <a class="nav-link text-white" href="#">Inicio
+            </a>
+          </li>
+          <li class="nav-item mx-2 cursorPointer">
+            <a class="nav-link text-white" [routerLink]="['/out-of-service']">Acerca de Nosotros</a>
+          </li>
+          <li class="nav-item mx-2 cursorPointer">
+            <a class="nav-link cursorPointer text-white"  (click)="loggedCond()">Publicaciones</a>
+          </li>
+          <li class="mx-2 nav-item dropdown">
+            <a class="nav-link  dropdown-toggle text-white cursorPointer" style="font-size: 14px" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Secciones
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item cursorPointer" [routerLink]="['/out-of-service']">Astronomía</a></li>
+              <li><a class="dropdown-item cursorPointer" [routerLink]="['/out-of-service']">Tecnología</a></li>
+              <li><a class="dropdown-item cursorPointer" [routerLink]="['/out-of-service']">Medicina</a></li>
+            </ul>
+          
+          </li>
+        
+         
+
+         
+       
+        </ul>
+        <span class="fill-remaining-space"></span>
+        <ul class="navbar-nav mr-auto margin-buttonT">
+          <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+            <li class="nav-item mx-2 cursorPointer margin-topT">
+              <a class="btn btn-outline-warning" style="cursor: pointer;" routerLink="/login">Ingresar</a>
+            </li>
+          </ng-container>
+
+          <ng-template class="float-end" #loggedIn>
+            
+            <li class="nav-item  mx-2 float-end">
+              <button class="btn btn-secondary text-white cursorPointer btn-new" type="button"  style="cursor: pointer;"  (click)="verifyRoleNew()">Nuevo</button>
+            </li>
+            <li class="nav-item mx-2 float-end ">
+              <a class="btn btn-warning text-white active cursorPointer btn-register" routerLinkActive="active"  (click)="verifyRoleRegister()">Registrar</a>
+            </li>
+            <li class="nav-item mx-2  float-end">
+              <a class="btn btn-outline-warning cursorPointer btn-next" style="cursor: pointer;" (click)="authService.logout()">Salir</a>
+            </li>
+
+          </ng-template>
+        </ul>
+
+  
+      </div>
+    </nav>
+  </div>
+ 
+ 
+
+</div>

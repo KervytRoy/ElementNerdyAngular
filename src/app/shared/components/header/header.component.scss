@@ -1,0 +1,86 @@
+.navbar {
+    padding-left: 7%;
+    padding-right: 5%;
+}
+
+.navbar-brand {
+    font-size: 1.571875rem;
+}
+
+.nav-header {
+    width: 100%;
+}
+
+.nav-header img {
+    height: 100%;
+    width: 100%;
+}
+
+.headers {
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+    padding-left: 0% !important;
+    padding-right: 0% !important;
+    min-height: 63px;
+    max-height: 76px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0px;
+    margin: 0%;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.headers .items {
+    padding: 0%;
+}
+
+@media (max-width: 992px) {
+
+    .btn-new {
+        cursor: pointer;
+        font-size: 1em;
+        padding-left: 0px;
+        
+       
+        
+     }
+
+     .btn-new:hover{
+        background-color: #4e5d6c;
+        border-color: #4e5d6c;
+        border: none;
+    } 
+
+     .btn-register{
+        background-color: #4e5d6c; 
+        border-color: #4e5d6c; 
+        cursor: pointer;
+        font-size: 1em;
+        padding-left: 0px;
+     }
+     
+    .btn-next {
+        background-color: #4e5d6c; 
+        border-color: #4e5d6c; 
+        cursor: pointer;
+        font-size: 1em;
+        padding-left: 0px;
+        
+    }
+    .margin-buttonT {
+        margin-bottom: 2%;
+    }
+    
+    .margin-topT {
+        margin-top: 2%;
+    }
+    
+    .dropdown-menu{
+        border: none;
+    }
+    
+}

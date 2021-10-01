@@ -1,0 +1,20 @@
+
+.routerOutlet {
+    padding-top: 2%;
+}
+
+
+@media  (max-width: 992px) {
+    .routerOutlet{
+        margin-top: 4.5rem !important;
+    }
+}
+
+.cursorPointer{
+    cursor: pointer;
+}
+
+
+.cursorContextMenu{
+    cursor: context-menu;
+}

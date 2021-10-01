@@ -1,0 +1,43 @@
+<div class="container formC">
+    <div class="row centrar ">
+        <div class="col-xs-8 col-sm-10 col-md-10 col-lg-7">
+            <div class="card text-center">
+                <form class="card-body" [formGroup]="loginForm" (ngSubmit)="registrar(loginForm.value)">
+                    <h1 class="card-title text-white">Registrar Usuario</h1>
+                    <div class="mb-5"></div>
+                    <div class="form-group mb-3 mx-2">
+                       
+                        <input type="name" class="form-control text-white" id="exampleInputEmail1" formControlName="firstName"
+                            placeholder="nombre completo" required>
+                    </div>
+                    <div *ngIf="loginForm.get('firstName').errors && loginForm.get('firstName').touched">
+                        <p class="text-warning mx-2" *ngIf="loginForm.get('firstName').hasError('required')">
+                          "nombre completo" Es un campo requerido
+                        </p>
+                      </div>
+                    <div class="form-group mb-3 mx-2">
+                       
+                        <input type="lastname" class="form-control text-white" id="exampleInputEmail1" formControlName="lastName"
+                            placeholder="apellido completo" required>
+                    </div>
+                    <div *ngIf="loginForm.get('lastName').errors && loginForm.get('lastName').touched">
+                        <p class="text-warning mx-2" *ngIf="loginForm.get('lastName').hasError('required')">
+                          "apellido completo" Es un campo requerido
+                        </p>
+                      </div>
+                    <div class="form-group mb-3 mx-2">
+                       
+                        <input type="email" class="form-control text-white" id="exampleInputEmail1" formControlName="email"
+                            placeholder="email" required>
+                    </div>
+                    <div *ngIf="loginForm.get('email').errors && loginForm.get('email').touched">
+                        <p class="text-warning mx-2" *ngIf="loginForm.get('email').hasError('required')">
+                          "email" Es un campo requerido
+                        </p>
+                      </div>
+                    <button  type="submit"  [disabled]="loginForm.invalid" class="btn btn-warning text-white">Listo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

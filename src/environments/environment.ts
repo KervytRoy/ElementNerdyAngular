@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDkBTjtZJaGnnC0Yr2Nz3TCLFN56sN6sag",
+    authDomain: "ronker.firebaseapp.com",
+    databaseURL: "https://ronker-default-rtdb.firebaseio.com",
+    projectId: "ronker",
+    storageBucket: "ronker.appspot.com",
+    messagingSenderId: "656781404021",
+    appId: "1:656781404021:web:37f3c917b4a6d68cad153c",
+    measurementId: "G-HN4DZVTK8H"
+  }
 };
 
 /*

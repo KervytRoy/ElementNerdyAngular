@@ -1,0 +1,50 @@
+<div class="container formC">
+ <div class="col-xs-8 col-sm-10  col-md-9 col-lg-7 mx-auto">
+    <div class="card">
+        <div class="card-header text-center text-white">
+          <h1>Nueva Publicación</h1>  
+        </div>
+        <div class="card-body">
+            <form  [formGroup]="modalForm" (ngSubmit)="uploadPost(modalForm.value)">
+                <div class="form-group my-2 ">
+                    <input type="text" class="form-control text-white" placeholder="título" formControlName="title" #title required>
+                </div>
+                <div *ngIf="modalForm.get('title').errors && modalForm.get('title').touched">
+                    <p class="text-warning mx-2" *ngIf="modalForm.get('title').hasError('required')">
+                      "título" Es un campo requerido
+                    </p>
+                  </div>
+                <div class="form-group my-2 text-white">
+                    <textarea rows="2" class="form-control text-white" placeholder="descripción" formControlName="description" required #description></textarea>
+                </div>
+                <div *ngIf="modalForm.get('description').errors && modalForm.get('description').touched">
+                    <p class="text-warning mx-2" *ngIf="modalForm.get('description').hasError('required')">
+                      "descripción" Este un campo requerido
+                    </p>
+                    <p class="text-warning mx-2" *ngIf="modalForm.get('description').hasError('maxlength')">
+                        No puedes exceder los 1000 caracteres
+                      </p>
+                      <p class="text-warning mx-2" *ngIf="modalForm.get('description').hasError('minlength')">
+                        Debes enviar minimo 10 caracteres
+                      </p>
+                  </div>
+
+                <input type="file" class="d-none" (change)="onPhotoSelected($event)" formControlName="image" #photoInput>
+                <div *ngIf="modalForm.get('image').errors && modalForm.get('image').touched">
+                  <p class="text-warning mx-2" *ngIf="modalForm.get('image').hasError('required')">
+                    "Image" Es un campo requerido
+                  </p>
+                </div>
+                <div class="img_card centrar">
+                    <img [src]="photoSelected || '../../../assets/klipartz.com.png'" class="img-fluid" alt="No image" (click)="photoInput.click()">
+                   <div class="text_img" (click)="photoInput.click()" >{{clickHereImg }}</div> 
+                </div>     
+                <button class="btn btn-warning text-white btn-block my-2 mx-2" [disabled]="modalForm.invalid">
+                    Publicar
+                </button>
+            </form>
+        </div>
+    </div>
+ </div>
+</div>
+

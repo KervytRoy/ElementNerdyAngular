@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/043d11f9-f89b-4e81-b2eb-cad86ced8757/resourceGroups/FrontEnd/providers/Microsoft.Web/sites/ElementNerdy",
+    "appService.deploySubpath": "dist\\app"
+}
